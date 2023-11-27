@@ -127,7 +127,7 @@ class PPG
     <meta charset="utf-8" />
     <title><?php echo $branch; ?> - PPG <?php echo $ppg["NOME_PPG"]; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Prodmais" />
+    <meta name="description" content="Pesq" />
     <meta name="keywords" content="Produção acadêmica, lattes, ORCID" />
 
 </head>
@@ -212,7 +212,7 @@ class PPG
                 <hr class="c-line u-my-20" />
 
                 <p>
-                    Total de produções registradas no Prodmais por pesquisadores vinculados ao PPG:
+                    Total de produções registradas no Pesq por pesquisadores vinculados ao PPG:
                     <?php echo $total_producoes; ?>
                 </p>
 

@@ -85,7 +85,7 @@ class Departamento {
                 $picture = "inc/images/tmp/profile.jpg",
                 $name = 'Sócrates',
                 $title = 'Coordenador',
-                $link = 'https://unifesp.br/prodmais/index.php'
+                $link = 'https://pesq.ufrgs.br/index.php'
                 )
                 ?>
                         </div>
@@ -162,7 +162,7 @@ class Departamento {
                   $picture = "inc/images/tmp/profile.jpg",
                   $name = 'Sebastião',
                   $title = 'Linha de pesquisa',
-                  $link = 'https://unifesp.br/prodmais/index.php'
+                  $link = 'https://pesq.ufrgs.br/index.php'
                 )
               ?>
                         </li>
@@ -172,7 +172,7 @@ class Departamento {
                   $picture = "inc/images/tmp/profile.jpg",
                   $name = 'Sócrates',
                   $title = 'Linha de pesquisa',
-                  $link = 'https://unifesp.br/prodmais/index.php'
+                  $link = 'https://pesq.ufrgs.br/index.php'
                 )
               ?>
                         </li>
@@ -182,7 +182,7 @@ class Departamento {
                     $picture = "inc/images/tmp/profile.jpg",
                     $name = 'Sêneca',
                     $title = 'Linha de pesquisa',
-                    $link = 'https://unifesp.br/prodmais/index.php'
+                    $link = 'https://pesq.ufrgs.br/index.php'
                   )
                 ?>
                         </li>
@@ -192,7 +192,7 @@ class Departamento {
                     $picture = "inc/images/tmp/profile.jpg",
                     $name = 'Salomão',
                     $title = 'Linha de pesquisa',
-                    $link = 'https://unifesp.br/prodmais/index.php'
+                    $link = 'https://pesq.ufrgs.br/index.php'
                   )
                 ?>
                         </li>

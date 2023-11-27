@@ -24,9 +24,10 @@ $cursor_ppgs = $client->search($params);
 <header class="siteheader">
     <div class="siteheader__content">
 
-        <a href="<?php echo $url_base; ?>">
+        <a href="https://www.ufrgs.br/datalab">
             <!-- <img class="siteheader-logo" src="< ?php echo $url_base; ?>/inc/images/logos/logo_header.svg" loading="lazy" /> -->
-            <i class="i i-prodmaisheader siteheader__logo"></i>
+            <!--<i class="i i-prodmaisheader siteheader__logo"></i>-->
+            <img class="i headerdatalab__logo" src="inc/images/logos/datalab-mini-2-200.png" alt="Ir para o site Datalab">
         </a>
 
         <div class="sitemenu-container">
@@ -73,14 +74,12 @@ $cursor_ppgs = $client->search($params);
                             <i class="i i-project sitemenu-ico"></i>
                         </a>
                     </li>
-                    <?php if ($mostrar_link_dashboard) : ?>
-                    <li class="sitemenu-item">
+                    <!--<li class="sitemenu-item">
                         <a class="sitemenu-link" href="predash.php" title="Dashboard">
                             Dashboard
                             <i class="i i-dashboard sitemenu-ico"></i>
                         </a>
-                    </li>
-                    <?php endif; ?>
+                    </li>-->
 
                     <!-- <li class="sitemenu-item">
           <a class="sitemenu-link" href="manual/" title="Manual">
@@ -89,12 +88,12 @@ $cursor_ppgs = $client->search($params);
           </a>
         </li> -->
 
-                    <li class="sitemenu-item">
+                    <!--<li class="sitemenu-item">
                         <a class="sitemenu-link" href="sobre.php" title="Sobre o Prodmais">
                             Sobre
                             <i class="i i-about sitemenu-ico"></i>
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
             </nav>
         </div>

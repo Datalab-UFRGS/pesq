@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 $hosts = ['localhost'];
 
 /* Endereço base */
-$url_base = "http://localhost/prodmais";
+$url_base = "http://pesq.ufrgs.br";
 
 
 /* Configurações do Elasticsearch */
@@ -35,8 +35,8 @@ $login_password = "admin";
 // ============== CUSTOMIZAÇÃO ============== //
 
 // Definir Instituição
-$instituicao = "Universidade Federal de São Paulo";
-$branch = "Prodmais";
+$instituicao = "Universidade Federal do Rio Grande do Sul";
+$branch = "Pesq";
 $branch_description = "Descrição";
 $facebook_image = "";
 $slogan = 'Slogan';
@@ -51,4 +51,5 @@ $mostrar_link_dashboard = true;
 // $theme = 'Prodmais';
 // $theme = 'Waterbeach';
 // $theme = 'Tomaton';
-$theme = 'Blueberry';
+// $theme = 'Blueberry';
+$theme = 'UFRGSPesq';
