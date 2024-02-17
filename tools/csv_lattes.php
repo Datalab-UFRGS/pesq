@@ -28,9 +28,6 @@ if (isset($_FILES['file'])) {
         if ($value == "GENERO") {
             define("GENERO", $key);
         }
-        if ($value == "INSTITUICAO") {
-            define("INSTITUICAO", $key);
-        }
     }
 
     while (($row = fgetcsv($fh, 108192, "\t")) !== false) {
@@ -54,11 +51,6 @@ if (isset($_FILES['file'])) {
             $queryParams[] = '&genero=' . $row[GENERO] . '';
         } else {
             $queryParams[] = '&genero=';
-        }
-        if (!empty($row[INSTITUICAO])) {
-            $queryParams[] = '&instituicao=' . $row[INSTITUICAO] . '';
-        } else {
-            $queryParams[] = '&instituicao=';
         }
         curlLattes($url_base, $IDLattes, $queryParams);
 

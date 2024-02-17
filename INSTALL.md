@@ -11,46 +11,7 @@ O primeiro passo é instalar o Elasticsearch:
     echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
     sudo apt-get update && sudo apt-get install elasticsearch
 
-Na versão 8 do Elasticsearch, ele vem com a segurança habilitada por padrão. É preciso anotar a senha gerada na instalação.
-
-Em ambientes de testes, é possível desabilitar a senha:
-
-    nano /etc/elasticsearch/elasticsearch.yml
-
-E alterar para false: xpack.security.enabled: false
-
-Em ambientes de produção, é necessário utizar a senha gerada na instalação e alterar o arquivo inc/functions.php
-
-    nano inc/functions.php
-
-Na linha 17, alterar de:
-
-    $client = ClientBuilder::create()
-        ->setHosts(['localhost:9200'])
-        ->build();
-
-Para:
-
-    $client = ClientBuilder::create()
-        ->setHosts(['https://localhost:9200'])
-        ->setBasicAuthentication('elastic','SENHA')
-        ->setCABundle('/var/www/prodmais/inc/http_ca.crt')
-        ->build();
-
-Caso queira testar se o Elasticseach está funcionando
-
-    export ELASTIC_PASSWORD="SENHA"
-    curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic:$ELASTIC_PASSWORD https://localhost:9200
-
-Comandos para iniciar o Elasticsearch:
-
-    sudo systemctl start elasticsearch.service
-    sudo systemctl stop elasticsearch.service
-
-Comandos para iniciar o Elasticsearch ao inicializar o sistema:
-
-    sudo /bin/systemctl daemon-reload
-    sudo /bin/systemctl enable elasticsearch.service
+Por padrão, o elasticseach não exige senha na instalação.
 
 ### Instalação do PHP 8.2
 
@@ -72,7 +33,7 @@ Comandos para iniciar o Elasticsearch ao inicializar o sistema:
 
     E adicionar ao apache conf:
 
-        <Directory /var/www/html>
+        <Directory /var/www/html/prodmais>
             Options Indexes FollowSymLinks
             AllowOverride All
             Require all granted
@@ -80,9 +41,9 @@ Comandos para iniciar o Elasticsearch ao inicializar o sistema:
 
 ### Clonagem do repositório do Prodmais
 
-Você pode clonar em qualquer pasta, mas é recomendável clonar na pasta pública do apache (ex. /var/www):
+Você pode clonar em qualquer pasta, mas é recomendável clonar na pasta pública do apache (ex. /var/www/html):
 
-    git clone https://github.com/unifesp/prodmais.git html
+    git clone https://github.com/unifesp/prodmais.git
 
 Na pasta do repositório, rodar:
 
@@ -97,18 +58,16 @@ Editar o arquivo config.php
 
     nano inc/config.php
 
-Editar no arquivo config.php as variáveis: $branch, $branch_description, $url_base, $facebook_image (opcional) e $instituicao.
-
-Após editar o arquivo config.php, rodar ele pela primeira vez num browser, usando o endereço http://localhost/NOMEDODIRETÓRIO
-
-Ao rodar pela primeira vez, o sistema irá criar os índices no elasticsearch.
-
 Criar o diretório tmp
 
     mkdir tmp
     chown -R www-data:www-data tmp
-    mkdir data
-    chown -R www-data:www-data data
+
+Editar no arquivo config.php as variáveis: $branch, $branch_description, $url_base, $facebook_image (opcional) e $instituicao.
+
+Após editar o arquivo config.php, rodar ele pela primeira vez num browser, usando o endereço htttp://localhost/NOMEDODIRETÓRIO
+
+Ao rodar pela primeira vez, o sistema irá criar os índices no elasticsearch.
 
 ### Google Analytics
 
@@ -120,7 +79,7 @@ Copie o código do Google Analytics no arquivo inc/google_analytics.php
 
 ### Inclusão automática
 
-Enviar dados por POST no arquivo import_lattes_to_elastic_dedup.php. Parâmetros aceitos:
+Parâmetros aceitos no import_lattes_to_elastic_dedup.php
 
     tag
     unidade

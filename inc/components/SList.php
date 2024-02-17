@@ -145,6 +145,25 @@ class SList
       </a>";
   }
 
+  // === Only for Slist::IntelectualProduction === //
+  static function fonteRendered($refName, $refVol, $refFascicle, $refPage)
+  {
+    if (empty($refName) && empty($refVol) && empty($refFascicle) && empty($refPage)) {
+      return "";
+    } else {
+      !empty($refName) ? $refName = $refName : '';
+      !empty($refVol) ? $refVol = ", v. $refVol" : '';
+      !empty($refFascicle) ? $refFascicle = ", n. $refFascicle" : '';
+      !empty($refPage) ? $refPage = ", p. $refPage" : '';
+      return "
+        <p class='t t-light'>
+          Fonte: $refName $refVol $refFascicle $refPage
+        </p>";
+    }
+  }
+
+
+
 
   static function date($start, $end)
   {
@@ -168,6 +187,14 @@ class SList
       $buf = "$buf </ul>";
     }
     return $buf;
+  }
+
+  static function cited_by_countRendered($cited_by_count)
+  {
+    return "
+      <p class='t t-light'>
+        Quantidade de citações obtidas no OpenAlex: $cited_by_count
+      </p>";
   }
 
   static function genericItem(
@@ -233,9 +260,10 @@ class SList
     $refVol,
     $refFascicle,
     $refPage,
+    $evento,
     $datePublished,
-    $cited_by_count,
-    $aurorasdg
+    $id,
+    $cited_by_count
   ) {
 
     $bullet = SList::bulletIntelectualProduction($type);
@@ -245,30 +273,11 @@ class SList
     !empty($doiCleaned) ? $doiRendered = SList::doiRendered($doiCleaned) : $doiRendered = '';
     !empty($url) ? $urlRendered = SList::urlRendered($url) : $urlRendered = '';
     !empty($issn) ? $issnRendered = SList::issnRendered($issn) : $issnRendered = '';
-    !empty($cited_by_count) ? $cited_by_count : $cited_by_count = 0;
-    !empty($aurorasdg) ? $aurorasdg = $aurorasdg : $aurorasdg = '';
-    !empty($refName) ? $refName = $refName : '';
-    !empty($refVol) ? $refVol = ", v. $refVol" : '';
-    !empty($refFascicle) ? $refFascicle = ", n. $refFascicle" : '';
-    !empty($refPage) ? $refPage = ", p. $refPage" : '';
-    !empty($datePublished) ? $datePublished = $datePublished : '';
-    $name_cleaned = htmlspecialchars($name, ENT_QUOTES);
+    $fonteRendered = SList::fonteRendered($refName, $refVol, $refFascicle, $refPage);
+    !empty($cited_by_count) ? $cited_by_countRendered = SList::cited_by_countRendered($cited_by_count) : $cited_by_countRendered = '';
 
-    if (!empty($aurorasdg['predictions'])) {
-      foreach ($aurorasdg['predictions'] as $prediction) {
-        if ($prediction['prediction'] > 0.5) {
-          $sdg = $prediction['sdg']['name'];
-          $score = $prediction['prediction'];
-          $sdgRendered = '<p class="t t-light">ODS: ' . $sdg . ' - Probabilidade: ' . $score . '</p>';
-        } else {
-          if (empty($sdgRendered)) {
-            $sdgRendered = '';
-          }
-        }
-      }
-    } else {
-      $sdgRendered = '';
-    }
+
+    // (!empty($datePublished) && !empty($id)) ? $query = DadosInternos::queryProdmais($name, $datePublished, $id) : $query = '';
 
     echo ("
 			<li class='s-list-2'>
@@ -281,33 +290,26 @@ class SList
 					<p class='t t-b t-md'><i>$type</i></p>
 					<p class='t-gray'><b class='t-subItem'>Autores: </b> $authorsRendered </p>
 					
-					<p class='d-linewrap t-gray'>
+					<div class='d-linewrap t-gray'>
             $doiRendered
             $urlRendered
             $issnRendered
-					</p>
-          <p class='mt-3'>
+					</div>
           $datePublished
-          </p>
 
-          <p class='t t-light'>
-          Fonte: $refName $refVol $refFascicle $refPage
-          </p>
+          $fonteRendered
+          
+          $cited_by_countRendered
 
-          ");
-    if ($cited_by_count > 0) {
-      echo "<p class='t t-light'>Quantidade de citações obtidas no OpenAlex: $cited_by_count</p>";
-    }
-    echo ("
           <p class='mt-3'>
             <a href='https://plu.mx/plum/a/?doi=$doiCleaned' class='plumx-details'></a>
-          </p>
-          <div class='sdg-wheel' data-wheel-height='100' data-model='elsevier-sdg-multi' data-text='$name_cleaned'></div>
-          <p class='mt-3'>
-            $sdgRendered
-          </p>
+					</p>
 
-        </div>
+          <p class='mt-3'>
+            <div class='sdg-wheel' data-wheel-height='100' data-model='elsevier-sdg-multi' data-text='$name'></div>
+					</p>
+
+				</div>
       </li>
     ");
   }

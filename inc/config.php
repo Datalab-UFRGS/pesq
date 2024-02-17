@@ -11,10 +11,11 @@ error_reporting(E_ALL);
 /* Endereço do server, sem http:// */
 $hosts = ['localhost:9200'];
 //$elasticsearch_user = "elastic";
-//$elasticsearch_password = "";
+//$elasticsearch_password = "SENHA";
 
 /* Endereço base */
-$url_base = "https://pesq.ufrgs.br";
+$url_base = "http://localhost:3000/index.php"
+;
 
 
 /* Configurações do Elasticsearch */
@@ -31,7 +32,7 @@ $login_password = "admin";
 // ============== CUSTOMIZAÇÃO ============== //
 
 // Definir Instituição
-$instituicao = "Instituição";
+$instituicao = "UFRGS";
 $branch = "Pesq UFRGS";
 $branch_description = "Descrição";
 $facebook_image = "";

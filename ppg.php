@@ -115,6 +115,7 @@ class PPG
 
 <head>
     <?php
+    require 'inc/config.php';
     require 'inc/meta-header.php';
     require 'inc/components/GraphBar.php';
     require 'inc/components/SList.php';
@@ -126,7 +127,7 @@ class PPG
     <meta charset="utf-8" />
     <title><?php echo $branch; ?> - PPG <?php echo $ppg["NOME_PPG"]; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Prodmais" />
+    <meta name="description" content="Pesq" />
     <meta name="keywords" content="Produção acadêmica, lattes, ORCID" />
 
 </head>
@@ -211,7 +212,7 @@ class PPG
                 <hr class="c-line u-my-20" />
 
                 <p>
-                    Total de produções registradas no Prodmais por pesquisadores vinculados ao PPG:
+                    Total de produções registradas no Pesq por pesquisadores vinculados ao PPG:
                     <?php echo $total_producoes; ?>
                 </p>
 
@@ -252,8 +253,8 @@ class PPG
 
                     <ul class="p-ppg__orientadores">
                         <?php foreach ($cursor_orientadores["hits"]["hits"] as $key => $value) { ?>
-                            <li>
-                                <?php
+                        <li>
+                            <?php
                                 $id = $value["_id"];
                                 $lattesID10 = lattesID10($value["_id"]);
 
@@ -265,7 +266,7 @@ class PPG
                                     $link = "profile.php?lattesID=$id"
                                 )
                                 ?>
-                            </li>
+                        </li>
                         <?php } ?>
                     </ul>
 

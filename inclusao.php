@@ -12,9 +12,8 @@
 
 <head>
     <?php
-    require 'inc/config.php';
-    require 'inc/functions.php';
     require 'inc/meta-header.php';
+    require 'inc/functions.php';
     ?>
     <title><?php echo $branch ?> - Inclusão</title>
 
@@ -22,7 +21,7 @@
 </head>
 
 <?php
-
+require 'inc/config.php';
 
 $username = $login_user;
 $password = $login_password;
@@ -47,7 +46,8 @@ if (isset($_POST['submit'])) {
                     title="Formulário de Inserção de XML do Lattes">
                     <div class="input-group">
                         <div class="custom-file">
-                            <input class="c-input" type="file" id="fileXML" aria-describedby="Arquivo XML" name="file">
+                            <input class="c-input--sm" type="file" id="fileXML" aria-describedby="Arquivo XML"
+                                name="file">
                             <label class="custom-file-label" for="fileXML">Escolha o arquivo</label>
                         </div>
                         <input class="c-input--sm" type="text" placeholder="Instituição" name="instituicao">
@@ -56,17 +56,23 @@ if (isset($_POST['submit'])) {
                         <input class="c-input--sm" type="text" placeholder="Lattes ID" name="lattes_id">
                         <input class="c-input--sm" type="text" placeholder="Unidade" name="unidade">
                         <input class="c-input--sm" type="text" placeholder="E-mail" name="email">
+                    </div>
+                    <div class="input-group">
                         <input class="c-input--sm" type="text" placeholder="Departamento" name="departamento">
                         <input class="c-input--sm" type="text" placeholder="Divisão" name="divisao">
                         <input class="c-input--sm" type="text" placeholder="Seção" name="secao">
                         <input class="c-input--sm" type="text" placeholder="Nome do PPG" name="ppg_nome">
                         <input class="c-input--sm" type="text" placeholder="Área de concentração"
                             name="area_concentracao">
+                    </div>
+                    <div class="input-group">
                         <input class="c-input--sm" type="text" placeholder="Tipo de vínculo" name="tipvin">
                         <input class="c-input--sm" type="text" placeholder="Genero" name="genero">
                         <input class="c-input--sm" type="text" placeholder="Nível" name="desc_nivel">
                         <input class="c-input--sm" type="text" placeholder="Curso" name="desc_curso">
                         <input class="c-input--sm" type="text" placeholder="Campus" name="campus">
+                    </div>
+                    <div class="input-group">
                         <input class="c-input--sm" type="text" placeholder="Gestora" name="desc_gestora">
                         <input class="c-input--sm" type="text" placeholder="Google Scholar ID" name="google_citation">
                         <input class="c-input--sm" type="text" placeholder="Researcher ID" name="researcherid">
@@ -87,10 +93,15 @@ if (isset($_POST['submit'])) {
                         <input class="c-input--sm" type="text" placeholder="Conceito CAPES" name="CONCEITO_CAPES">
                         <input class="c-input--sm" type="text" placeholder="Instituição" name="NOME_INSTITUICAO">
                         <input class="c-input--sm" type="text" placeholder="Campus" name="NOME_CAMPUS">
+                    </div>
+
+                    <div class="input-group">
                         <input class="c-input--sm" type="text" placeholder="Sigla da Câmara" name="SIGLA_CAMARA">
                         <input class="c-input--sm" type="text" placeholder="Nome da Câmara" name="NOME_CAMARA">
                         <input class="c-input--sm" type="text" placeholder="Nome do PPG" name="NOME_PPG" required />
                         <input class="c-input--sm" type="text" placeholder="Data de início do PPG" name="INI_PPG">
+                    </div>
+                    <div class="input-group">
                         <input class="c-input--sm" type="text" placeholder="Site do PPG" name="PPG_SITE">
                         <input class="c-input--sm" type="text" placeholder="E-mail do PPG" name="PPG_EMAIL">
                         <input class="c-input--sm" type="text" placeholder="URL no DSpace do PPG"
@@ -98,6 +109,8 @@ if (isset($_POST['submit'])) {
                         <input class="c-input--sm" type="text" placeholder="URL no Dataverse do PPG"
                             name="PRODMAIS_DATAVERSE">
                         <input class="c-input--sm" type="text" placeholder="Gestora" name="desc_gestora">
+                    </div>
+                    <div class="input-group">
                         <input class="c-input--sm" type="text" placeholder="Nome do Coodenador" name="NOME_COORDENADOR">
                         <input class="c-input--sm" type="text" placeholder="Data de Início do Coodenador"
                             name="DT_INI_COORD">
@@ -130,7 +143,8 @@ if (isset($_POST['submit'])) {
                     enctype="multipart/form-data" title="Formulário de importação de registros do OpenAlex">
                     <div class="input-group">
                         <div class="custom-file">
-                            <input class="c-input" type="file" id="fileCSV" aria-describedby="Arquivo CSV" name="file">
+                            <input class="c-input--sm" type="file" id="fileCSV" aria-describedby="Arquivo CSV"
+                                name="file">
                             <label class="custom-file-label" for="fileCSV">Escolha o arquivo CSV</label>
                         </div>
                     </div>
@@ -140,48 +154,6 @@ if (isset($_POST['submit'])) {
                     <p>Para utilizar esta funcionalidade, é necessário utilizar o modelo abaixo do arquivo CSV e colocar
                         os arquivos zip baixados do Lattes na pasta /data</p>
                     <p>Baixar <a href="tools/modelo.csv">Modelo CSV</a></p>
-                </form>
-
-
-
-                <?php if ($instituicao == "UNIFESP" | $instituicao == "Sou Ciência") : ?>
-
-                <h2 class="t t-h3 ">Downlod de curriculo Lattes para a pasta /data utilizando um arquivo CSV</h2>
-
-                <form class="p-inclusao-form" action="tools/unifesp/download_lattes_by_id.php" method="post"
-                    accept-charset="utf-8" enctype="multipart/form-data" title="Baixar Lattes por uma Lista de IDs">
-                    <div class="input-group">
-                        <div class="custom-file">
-                            <input class="c-input" type="file" id="file" aria-describedby="Arquivo CSV" name="file">
-                            <label class="custom-file-label" for="file">Escolha o arquivo CSV</label>
-                        </div>
-                    </div>
-                    <div class="input-group-append">
-                        <button class="c-btn" type="submit">Baixar Lattes</button>
-                    </div>
-                    <p>Para utilizar esta funcionalidade, é necessário enviar um arquivo CSV sem cabeçalho com um ID
-                        Lattes por linha e enter na última linha</p>
-                </form>
-
-                <?php endif ?>
-
-
-                <h2 class="t t-h3 ">Classificador ODS a partir de um TSV, usando a API Aurora SDG</h2>
-
-                <form class="p-inclusao-form" action="tools/classificadorSDGAurora.php" method="post"
-                    accept-charset="utf-8" enctype="multipart/form-data" title="Classificador ODS">
-                    <div class="input-group">
-                        <div class="custom-file">
-                            <input class="c-input" type="file" id="fileCSV" aria-describedby="Arquivo CSV" name="file">
-                            <label class="custom-file-label" for="fileCSV">Escolha o arquivo CSV</label>
-                        </div>
-                    </div>
-                    <div class="input-group-append">
-                        <button class="c-btn" type="submit">Incluir</button>
-                    </div>
-                    <p>Para utilizar esta funcionalidade, é necessário utilizar o modelo abaixo do arquivo CSV e colocar
-                        os arquivos zip baixados do Lattes na pasta /data</p>
-                    <p>Baixar <a href="tools/modelo_sdg.csv">Modelo TSV ODS</a></p>
                 </form>
 
 

@@ -2,8 +2,8 @@
 
 .sitefooter {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
 	background-color: var(--c-se-1);
 	border-top: var(--c-se-4) 0.5rem solid;
@@ -11,7 +11,7 @@
 	color: var(--c-se-4);
 	left: 0;
 	right: 0;
-	padding-bottom: 2rem;
+	padding: 0 2rem;
 }
 
 .sitefooter-contacts {

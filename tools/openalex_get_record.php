@@ -29,8 +29,8 @@ echo "<a href='apis.php'>Retornar para a página de APIs</a><br/>";
 
 foreach ($cursor["hits"]["hits"] as $r) {
     // //print("<pre>".print_r($r, true)."</pre>");
-    // //print("<pre>".print_r($r["_source"]["doi"], true)."</pre>");
-    $openalex_result = openalexAPIGetDOIFullCURL($r["_source"]["doi"]);
+    // //print("<pre>".print_r($r["_source"]["doi"], true)."</pre>");    
+    $openalex_result = openalexAPI($r["_source"]["doi"], $client);
     unset($openalex_result['abstract_inverted_index']);
 
     if (empty($openalex_result)) {

@@ -18,7 +18,7 @@ if (isset($elasticsearch_user)) {
     $client = ClientBuilder::create()
     ->setHosts(['https://localhost:9200'])
     ->setBasicAuthentication('elastic','SENHA')
-    ->setCABundle('/var/www/pesq/public_html/inc/http_ca.crt')
+    ->setCABundle('~/pesq/inc/http_ca.crt')
     ->build();
 } else {
     $client = ClientBuilder::create()

@@ -9,12 +9,10 @@ error_reporting(E_ALL);
 // ============== CONFIGURAÇÕES ============== //
 
 /* Endereço do server, sem http:// */
-$hosts = ['localhost:9200'];
-//$elasticsearch_user = "elastic";
-//$elasticsearch_password = "";
+$hosts = ['localhost'];
 
 /* Endereço base */
-$url_base = "http://localhost/prodmais";
+$url_base = "http://pesq.ufrgs.br";
 
 
 /* Configurações do Elasticsearch */
@@ -22,6 +20,12 @@ $index = "prodmais";
 $index_cv = "prodmaiscv";
 $index_ppg = "prodmaisppg";
 $index_projetos = "prodmaisprojetos";
+
+/* Load libraries for PHP composer */
+require(__DIR__ . '/../vendor/autoload.php');
+
+/* Load Elasticsearch Client */
+$client = \Elastic\Elasticsearch\ClientBuilder::create()->setHosts($hosts)->build();
 
 /* Login */
 $login_user = "admin";
@@ -31,8 +35,8 @@ $login_password = "admin";
 // ============== CUSTOMIZAÇÃO ============== //
 
 // Definir Instituição
-$instituicao = "Instituição";
-$branch = "Prodmais Instituição";
+$instituicao = "Universidade Federal do Rio Grande do Sul";
+$branch = "Pesq";
 $branch_description = "Descrição";
 $facebook_image = "";
 $slogan = 'Slogan';
@@ -47,4 +51,5 @@ $mostrar_link_dashboard = true;
 // $theme = 'Prodmais';
 // $theme = 'Waterbeach';
 // $theme = 'Tomaton';
-$theme = 'Blueberry';
+// $theme = 'Blueberry';
+$theme = 'UFRGSPesq';

@@ -36,7 +36,7 @@ $cursor_ppgs = $client->search($params);
 
         <a href="<?php echo $url_base; ?>">
             <!-- <img class="siteheader-logo" src="< ?php echo $url_base; ?>/inc/images/logos/logo_header.svg" loading="lazy" /> -->
-            <i class="i i-prodmaisheader siteheader__logo"></i>
+            <i class="i i-pesqheader siteheader__logo"></i>
         </a>
 
         <div class="sitemenu-container">
@@ -70,12 +70,12 @@ $cursor_ppgs = $client->search($params);
                         </a>
                     </li>
                     <?php if (count($cursor_ppgs['hits']['hits']) !== 0) : ?>
-                    <li class=" sitemenu-item">
-                        <a class="sitemenu-link" href="ppgs.php" title="Programas de pós graduação">
-                            PPGs
-                            <i class="i i-ppg-logo sitemenu-ico"></i>
-                        </a>
-                    </li>
+                        <li class=" sitemenu-item">
+                            <a class="sitemenu-link" href="ppgs.php" title="Programas de pós graduação">
+                                PPGs
+                                <i class="i i-ppg-logo sitemenu-ico"></i>
+                            </a>
+                        </li>
                     <?php endif; ?>
                     <li class=" sitemenu-item">
                         <a class="sitemenu-link" href="projetos.php" title="Projetos de pesquisa">
@@ -84,12 +84,12 @@ $cursor_ppgs = $client->search($params);
                         </a>
                     </li>
                     <?php if ($mostrar_link_dashboard) : ?>
-                    <li class="sitemenu-item">
-                        <a class="sitemenu-link" href="predash.php" title="Dashboard">
-                            Dashboard
-                            <i class="i i-dashboard sitemenu-ico"></i>
-                        </a>
-                    </li>
+                        <li class="sitemenu-item">
+                            <a class="sitemenu-link" href="predash.php" title="Dashboard">
+                                Dashboard
+                                <i class="i i-dashboard sitemenu-ico"></i>
+                            </a>
+                        </li>
                     <?php endif; ?>
 
                     <!-- <li class="sitemenu-item">

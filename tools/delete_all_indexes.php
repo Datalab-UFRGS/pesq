@@ -1,7 +1,6 @@
 <?php
 
 require '../inc/config.php';
-require '../inc/functions.php';
 
 $params = ['index' => $index];
 $response = $client->indices()->delete($params);
