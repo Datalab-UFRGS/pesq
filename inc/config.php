@@ -10,11 +10,11 @@ error_reporting(E_ALL);
 
 /* Endereço do server, sem http:// */
 $hosts = ['localhost:9200'];
-//$elasticsearch_user = "elastic";
-//$elasticsearch_password = "SENHA";
+// $elasticsearch_user = "elastic";
+// $elasticsearch_password = "SENHA";
 
 /* Endereço base */
-$url_base = "http://localhost:3000/index.php"
+$url_base = "http://pesq.ufrgs.br"
 ;
 
 
