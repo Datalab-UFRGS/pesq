@@ -5,11 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-<<<<<<< HEAD
-        'reference' => '60526705a1b5236c34310e97c7fa4abbdda52024',
-=======
-        'reference' => '663add8dd059ca232482b1c240d4105ce447315d',
->>>>>>> 43541695baadb034a6fd73bfffa6b3fded53a7d8
+        'reference' => 'e252c0e0232e3c23ea82d9584653acbfe58092e6',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -20,11 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-<<<<<<< HEAD
-            'reference' => '60526705a1b5236c34310e97c7fa4abbdda52024',
-=======
-            'reference' => '663add8dd059ca232482b1c240d4105ce447315d',
->>>>>>> 43541695baadb034a6fd73bfffa6b3fded53a7d8
+            'reference' => 'e252c0e0232e3c23ea82d9584653acbfe58092e6',
             'dev_requirement' => false,
         ),
         'caseyamcl/phpoaipmh' => array(
