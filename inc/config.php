@@ -36,6 +36,7 @@ $instituicao = "UFRGS";
 $branch = "Pesq UFRGS";
 $branch_description = "Descrição";
 $facebook_image = "";
+// Slogan manutenção
 $slogan = 'Uma ferramenta de busca da produção científica de pesquisadores vinculados à UFRGS';
 
 $mostrar_instituicao = true;
