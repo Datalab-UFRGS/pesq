@@ -128,7 +128,7 @@ com este programa, Se não, veja <https://www.gnu.org/licenses/>.
             <form class="p-home-form" class="" action="result.php" title="Pesquisa simples" method="post">
 
                 <div class="c-searcher">
-                    <input id="mainseach" name="search" type="search" placeholder="Pesquise por palavra chave"
+                    <input id="mainseach" name="search" type="search" placeholder="Pesquise por palavras chaves"
                         aria-label="Pesquisar">
                     <button class="c-searcher__btn" type="submit" title="Buscar">
                         <i class="i i-lupa c-searcher__btn-ico"></i>

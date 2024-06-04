@@ -118,7 +118,7 @@
           // echo ($facets->facet(basename(__FILE__), "lattes.meioDeDivulgacao", 100, "Meio de divulgação", null, "_key", $_POST, "result.php"));
           echo ($facets->facet(basename(__FILE__), "about", 100, "Palavras-chave", null, "_key", $_POST, "result.php"));
           echo ($facets->facet(basename(__FILE__), "agencia_de_fomento", 100, "Agências de fomento", null, "_key", $_POST, "result.php"));
-          echo ($facets->facet(basename(__FILE__), "area_do_conhecimento.nomeGrandeAreaDoConhecimento", 100, "Nome da grande área do conhecimento", null, "_key", $_POST, "result.php"));
+          echo ($facets->facet(basename(__FILE__), "area_do_conhecimento.nomeGrandeAreaDoConhecimento", 100, "Grande área do conhecimento", null, "_key", $_POST, "result.php"));
           //echo($facets->facet(basename(__FILE__), "area_do_conhecimento.nomeDaAreaDoConhecimento", 100, "Nome da Área do Conhecimento", null, "_key", $_POST, "result.php"));
           //echo($facets->facet(basename(__FILE__), "area_do_conhecimento.nomeDaSubAreaDoConhecimento", 100, "Nome da Sub Área do Conhecimento", null, "_key", $_POST, "result.php"));
           //echo($facets->facet(basename(__FILE__), "area_do_conhecimento.nomeDaEspecialidade", 100, "Nome da Especialidade", null, "_key", $_POST, "result.php"));
