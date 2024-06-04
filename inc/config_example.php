@@ -39,7 +39,7 @@ $instituicao = "Universidade Federal do Rio Grande do Sul";
 $branch = "Pesq";
 $branch_description = "Descrição";
 $facebook_image = "";
-$slogan = 'Slogan';
+$slogan = 'uma ferramenta que agrega informações referentes a pesquisadores e docentes da UFRGS';
 
 $mostrar_instituicao = true;
 $mostrar_area_concentracao = true;
