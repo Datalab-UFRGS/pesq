@@ -48,17 +48,10 @@
                 pesquisa.
             </h1>
 
-            <p class="p-about-text">O Prodmais é uma ferramenta que agrega informações sobre produções acadêmicas de
-                diversas
-                fontes, e dentre
-                elas, principalmente a base Lattes. Permite efetuar pesquisas específicas na base de dados e filtrar os
-                resultados com o apoio das diversas opções de filtros que a ferramenta possui. Também permite efetuar
-                buscas por
-                pesquisadores, e possui filtragens por área de atuação, Campus, idioma, data da publicação, nível de
-                formação,
-                enfim, várias opções. É possível exportar os resultados utilizando formatos suportados por diversos
-                softwares
-                bibliográficos, e também é possível exportar toda a informação de um perfil para o ORCID.
+            <p class="p-about-text">O Pesq é uma ferramenta que agrega informações sobre os docentes e pesquisadores da Universidade Federal do Rio Grande do Sul (UFRGS), tendo como fonte informações extraídas da plataforma Lattes. Essa ferramenta permite efetuar pesquisas específicas nesta base de dados, possibilitando a recuperação de informações relativas ao corpo docente desta universidade, com a ajuda de filtros para melhor navegação.
+
+A plataforma objetiva deixar acessível informações relacionadas aos docentes e pesquisadores da UFRGS, permitindo que pessoas vinculadas à UFRGS ou não possam ter acesso de forma facilitada a estas informações, que então podem ser utilizadas para identificar pesquisadores e docentes por departamento, área de pesquisa, entre outros pontos. Além desta lista de pesquisadores, tem-se também a produção científica produzida por tais, disponibilizada na plataforma Lattes e os projetos de pesquisa que estão associados. A ferramenta Dashboard, baseada no Elastic, organiza as informações disponibilizadas em gráficos e estatísticas, permitindo uma visualização geral das informações inseridas na base.
+
             </p>
 
 
